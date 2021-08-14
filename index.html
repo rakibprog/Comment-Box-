@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box Js</title>
+    <style>
+        .comments {
+            text-align: center;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comments">
+        <div class="comment-content" id="comment-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci expedita porro magni recusandae ipsam ex consectetur reprehenderit corrupti ducimus laboriosam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci expedita porro magni recusandae ipsam ex consectetur reprehenderit corrupti ducimus laboriosam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci expedita porro magni recusandae ipsam ex consectetur reprehenderit corrupti ducimus laboriosam?</p>
+
+        </div>
+        <div class="comment-box">
+            <textarea name="" id="comment-value" cols="30" rows="10"></textarea>
+            <button id="btn-submit">Submit Comments</button>
+        </div>
+    </div>
+
+    <script>
+        // add event button
+        document.getElementById('btn-submit').addEventListener('click', function() {
+            //get user value 
+            const commentValue = document.getElementById('comment-value');
+            // create element  
+            const newComment = document.createElement('p');
+            newComment.innerText = commentValue.value;
+            // append the comment 
+            const commentBox = document.getElementById('comment-content');
+            commentBox.appendChild(newComment);
+            // clean the comment box 
+            commentValue.value = '';
+
+        });
+    </script>
+</body>
+
+</html>
